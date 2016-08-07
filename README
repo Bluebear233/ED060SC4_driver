@@ -1,26 +1,20 @@
-1. Introduction
+1. 介绍
 
-This is a driver for ED060SC4 800x600 e-ink display panel manufactured by
-Prime View. Note that this driver uses a direct connection to the panel from
-the processor; it does not use a separate controller chip between the processor
-and the panel.
+这是ED060SC4 800*600 墨水屏幕驱动。这个驱动是适用在单片机直接连接屏幕的，
+不支持带有控制IC的屏幕。
 
-To use the driver, you need to be able to control the following signals from
-your processor:
+要使用这个驱动，需要单片机提供下面的信号
 
-Gate driver: SPV, CKV, GMODE.
-Source driver: CL, LE, OE, SPH, D0-D7.
-Power supply: +-15V, +22V, -20V, digital Vdd
+Gate 驱动: SPV, CKV, GMODE.
+Source 驱动: CL, LE, OE, SPH, D0-D7.
+电源: +-15V, +22V, -20V, digital Vdd
 
-The file "example_schematics.png" shows how to connect the signals to e.g. a
-STM32L151 microcontroller. It also includes an example circuit for providing
-the panel supply voltages.
+ "example_schematics.png"这个是电路原理图，里面介绍ED060SC4的连接、电源电路、
+ 使用的是STM32L151单片机。
 
-Note that the larger panels (such as the 800x600) consist of multiple segments
-with separate gate driver signals. These can be daisy chained as shown in the
-example schematic.
+需要注意更大的屏幕（比如800*600)由多个独立的gate驱动信号组成。就像原理图里面的菊花链。
 
-Please see here for more information on the panel:
+关于更多墨水屏的信息
 http://essentialscrap.com/eink/
 
 
